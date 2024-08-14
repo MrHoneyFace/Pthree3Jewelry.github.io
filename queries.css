@@ -1,0 +1,74 @@
+/* 1rem = 1em = 16px */
+
+/**************************/
+/* BELOW 1344px (Smaller desktops) */
+/**************************/
+
+@media (max-width: 84em) {
+}
+
+/**************************/
+/* BELOW 1200px (Landscape Tablets) */
+/**************************/
+
+@media (max-width: 75em) {
+  .flexPay {
+    flex-direction: column;
+  }
+
+  .manualSlidesBox {
+    max-width: 90rem;
+    max-height: 72rem;
+  }
+
+  #topX {
+    display: inline-block;
+  }
+
+  #bottomX {
+    display: none;
+  }
+}
+
+/**************************/
+/* BELOW 944px (Tablets) */
+/**************************/
+
+@media (max-width: 59em) {
+  .grid2Col {
+    grid-template-columns: 100%;
+    /* margin: 0; */
+    justify-content: left;
+    /* margin-left: 33%; */
+    width: auto;
+  }
+
+  .grid2Col h2 {
+    font-size: 2.4rem;
+  }
+
+  .grid2Col p {
+    font-size: 1.6rem;
+  }
+
+  .gridShop {
+    grid-template-columns: 90%;
+  }
+}
+
+/**************************/
+/* BELOW 704px (Smaller tablets) */
+/**************************/
+
+@media (max-width: 44em) {
+  .pageNav {
+    font-size: 1.2rem;
+  }
+}
+
+/**************************/
+/* BELOW 544px (Phones) */
+/**************************/
+
+@media (max-width: 34em) {
+}

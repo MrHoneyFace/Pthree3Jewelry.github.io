@@ -1,13 +1,6 @@
+"use strict";
+
 // SLIDER
-
-/*let currentIndex = 0;
-
-setInterval(function () {
-  const slidesAuto = document.querySelector(".slidesAuto");
-  const totalSlides = document.querySelectorAll(".slideAuto").length;
-  currentIndex = (currentIndex + 1) % totalSlides;
-  slidesAuto.style.transform = `translateX(-${currentIndex * 100}%)`;
-}, 3000);*/
 
 const sliderAuto = document.querySelector(".sliderAuto");
 const images = document.querySelectorAll(".sliderAuto img");
@@ -85,8 +78,6 @@ const showPayScreen = function (str) {
     document.querySelector(".payScreen").classList.remove("hidden");
 
     document.querySelector(".changeVal").value = buttonVals[str];
-    console.log(document.querySelector(".changeVal").value);
-
     document.querySelector(".payTitle").textContent = str.replace("_", " ");
 
     let imgs = document.querySelectorAll(".slideManual img");
@@ -95,6 +86,7 @@ const showPayScreen = function (str) {
         "slider",
         document.querySelector(".payTitle").textContent
       );
+      console.log(img.src);
     });
   });
 };

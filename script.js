@@ -61,15 +61,15 @@ checkForClick("contact");
 // .shopCard and .payScreen
 
 let buttonVals = {
-  Abba: "HKJM9F2WBAWK2",
-  Elohim: "EWDCW7FDRMB3J",
-  El_Shaddai: "5KGH9WM7QYBLL",
-  Elyon: "8UQDPYY43Y2VJ",
-  Immanuel: "MCH495J7JXETE",
-  Jehovah_Jireh: "PPRV7A9ZHAK4Q",
-  Jesus: "B2PEJKRQH7VN4",
-  Logos: "HXTNYNQ3JYJWE",
-  Messiah: "X9EVAQ3EVMAXL",
+  abba: "HKJM9F2WBAWK2",
+  elohim: "EWDCW7FDRMB3J",
+  el_shaddai: "5KGH9WM7QYBLL",
+  elyon: "8UQDPYY43Y2VJ",
+  immanuel: "MCH495J7JXETE",
+  jehovah_jireh: "PPRV7A9ZHAK4Q",
+  jesus: "B2PEJKRQH7VN4",
+  logos: "HXTNYNQ3JYJWE",
+  messiah: "X9EVAQ3EVMAXL",
 };
 
 const showPayScreen = function (str) {
@@ -81,6 +81,7 @@ const showPayScreen = function (str) {
     document.querySelector(".payTitle").textContent = str.replace("_", " ");
 
     let imgs = document.querySelectorAll(".slideManual img");
+
     imgs.forEach((img) => {
       img.src = img.src.replace(
         "slider",
@@ -91,14 +92,14 @@ const showPayScreen = function (str) {
   });
 };
 
-showPayScreen("Abba");
-showPayScreen("Elohim");
-showPayScreen("El_Shaddai");
-showPayScreen("Elyon");
-showPayScreen("Immanuel");
-showPayScreen("Jehovah_Jireh");
-showPayScreen("Jesus");
-showPayScreen("Messiah");
+showPayScreen("abba");
+showPayScreen("elohim");
+showPayScreen("el_shaddai");
+showPayScreen("elyon");
+showPayScreen("immanuel");
+showPayScreen("jehovah_jireh");
+showPayScreen("jesus");
+showPayScreen("messiah");
 
 document
   .querySelector(".material-symbols-outlined")

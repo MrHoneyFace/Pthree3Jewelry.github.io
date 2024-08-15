@@ -101,11 +101,14 @@ p {
   justify-content: right;
   align-items: center;
   padding: 1.6rem;
-  /* padding-bottom: 0; */
   margin-bottom: 6rem;
   gap: 2.4rem;
   color: #f3ded8;
   background-color: #804e89;
+}
+
+.topLogo {
+  max-height: 9.6rem;
 }
 
 .freeShipping {

@@ -67,30 +67,6 @@ checkForClick("contact");
 
 // .shopCard and .payScreen
 
-/*
-const showPayScreen = function (title) {
-  console.log("Card clicked! .payScreen showing!");
-  document.querySelector(".shopSection").classList.add("hidden");
-  document.querySelector(".payScreen").classList.remove("hidden");
-  document.querySelector(".payTitle").textContent = title;
-};*/
-
-// document
-//   .querySelector(".shopCard")
-//   .addEventListener("click", showPayScreen("HEJJO"));
-
-// BUTTONS
-
-// Abba HKJM9F2WBAWK2
-// Elohim EWDCW7FDRMB3J
-// El Shaddai 5KGH9WM7QYBLL
-// Elyon 8UQDPYY43Y2VJ
-// Immanuel MCH495J7JXETE
-// Jehovah Jireh PPRV7A9ZHAK4Q
-// Jesus B2PEJKRQH7VN4
-// Logos HXTNYNQ3JYJWE
-// Messiah X9EVAQ3EVMAXL
-
 let buttonVals = {
   Abba: "HKJM9F2WBAWK2",
   Elohim: "EWDCW7FDRMB3J",
@@ -105,27 +81,20 @@ let buttonVals = {
 
 const showPayScreen = function (str) {
   document.querySelector(`#${str}`).addEventListener("click", function () {
-    // console.log("Card clicked! .payScreen showing!");
     document.querySelector(".shopSection").classList.add("hidden");
     document.querySelector(".payScreen").classList.remove("hidden");
 
-    // console.log(buttonVals[str]);
-    // console.log(document.querySelector(".changeVal").value);
     document.querySelector(".changeVal").value = buttonVals[str];
     console.log(document.querySelector(".changeVal").value);
 
     document.querySelector(".payTitle").textContent = str.replace("_", " ");
 
-    // console.log(document.querySelector(".payTitle").textContent);
-
-    let img = document.querySelectorAll(".slideManual img");
-    img.forEach((img) => {
+    let imgs = document.querySelectorAll(".slideManual img");
+    imgs.forEach((img) => {
       img.src = img.src.replace(
         "slider",
         document.querySelector(".payTitle").textContent
       );
-      // console.log(img.src);
-      // console.log(img);
     });
   });
 };

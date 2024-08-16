@@ -14,6 +14,7 @@
   font-style: normal;
   text-transform: uppercase;
   color: #8f6542;
+  line-height: 3rem;
 }
 
 .hidden {
@@ -44,6 +45,7 @@ html {
 }
 
 h1 {
+  padding-bottom: 2.4rem;
   margin-bottom: 2.4rem;
   /* font-family: "Niconne", cursive; */
   font-size: 3.6rem;
@@ -207,6 +209,12 @@ a {
   display: block;
 }
 
+/* About */
+
+.aboutSection {
+  margin-top: 2.4rem;
+}
+
 /* FAQ */
 
 .grid2Col {
@@ -365,6 +373,7 @@ img::selection {
 
 form {
   align-self: center;
+  margin-top: 3.6rem;
 }
 
 .flexTitle {

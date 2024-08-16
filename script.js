@@ -79,16 +79,42 @@ const showPayScreen = function (str) {
 
     document.querySelector(".changeVal").value = buttonVals[str];
     document.querySelector(".payTitle").textContent = str.replace("_", " ");
+    document.querySelector(".payTitle").textContent[0].toUpperCase();
 
     let imgs = document.querySelectorAll(".slideManual img");
 
     imgs.forEach((img) => {
       img.src = img.src.replace(
         "slider",
-        document.querySelector(".payTitle").textContent
+        document.querySelector(".payTitle").textContent.toLowerCase()
       );
-      console.log(img.src);
+
+      // console.log(img.src);
     });
+
+    document.querySelector(".payTitle").textContent = document
+      .querySelector(".payTitle")
+      .textContent.replace(
+        document.querySelector(".payTitle").textContent[0],
+        document.querySelector(".payTitle").textContent[0].toUpperCase()
+      );
+
+    // console.log(document.querySelector(".payTitle").textContent.indexOf(" "));
+
+    if (document.querySelector(".payTitle").textContent.indexOf(" ") !== -1) {
+      document.querySelector(".payTitle").textContent = document
+        .querySelector(".payTitle")
+        .textContent.replace(
+          document.querySelector(".payTitle").textContent[
+            document.querySelector(".payTitle").textContent.indexOf(" ") + 1
+          ],
+          document
+            .querySelector(".payTitle")
+            .textContent[
+              document.querySelector(".payTitle").textContent.indexOf(" ") + 1
+            ].toUpperCase()
+        );
+    }
   });
 };
 
@@ -99,24 +125,24 @@ showPayScreen("elyon");
 showPayScreen("immanuel");
 showPayScreen("jehovah_jireh");
 showPayScreen("jesus");
+showPayScreen("logos");
 showPayScreen("messiah");
 
 document
   .querySelector(".material-symbols-outlined")
   .addEventListener("click", function () {
-    // console.log("X clicked! .payScreen hiding!");
     document.querySelector(".payScreen").classList.add("hidden");
     document.querySelector(".shopSection").classList.remove("hidden");
 
     let img = document.querySelectorAll(".slideManual img");
     img.forEach((img) => {
-      // console.log(document.querySelector(".payTitle").textContent);
-
       img.src = img.src
         .replace("%20", " ")
-        .replace(document.querySelector(".payTitle").textContent, "slider");
+        .replace(
+          document.querySelector(".payTitle").textContent.toLowerCase(),
+          "slider"
+        );
     });
-    // console.log(document.querySelector(".payTitle").textContent);
   });
 
 // MANUAL SLIDER
@@ -137,6 +163,7 @@ function currentSlide(n) {
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("slideManual");
+  console.log(slides);
   let dots = document.getElementsByClassName("dot");
   if (n > slides.length) {
     slideIndex = 1;

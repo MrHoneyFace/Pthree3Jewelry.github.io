@@ -39,14 +39,22 @@ document.querySelector(`.${currentPage}`).classList.add("activeBtn");
 
 function checkForClick(btnName) {
   document.querySelector(`.${btnName}`).addEventListener("click", function () {
-    // console.log(`${btnName} clicked!`);
+    let img = document.querySelectorAll(".slideManual img");
+    img.forEach((img) => {
+      img.src = img.src
+        .replace("%20", " ")
+        .replace(
+          document.querySelector(".payTitle").textContent.toLowerCase(),
+          "slider"
+        );
+    });
 
     document.querySelector(".payScreen").classList.add("hidden");
 
     document.querySelector(`.${currentPage}Section`).classList.add("hidden");
     document.querySelector(`.${currentPage}`).classList.remove("activeBtn");
     currentPage = btnName;
-    // console.log(currentPage);
+
     document.querySelector(`.${currentPage}Section`).classList.remove("hidden");
     document.querySelector(`.${currentPage}`).classList.add("activeBtn");
   });

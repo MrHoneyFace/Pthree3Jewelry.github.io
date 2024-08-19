@@ -69,15 +69,41 @@ checkForClick("contact");
 // .shopCard and .payScreen
 
 let buttonVals = {
-  abba: "HKJM9F2WBAWK2",
-  elohim: "EWDCW7FDRMB3J",
-  el_shaddai: "5KGH9WM7QYBLL",
-  elyon: "8UQDPYY43Y2VJ",
-  immanuel: "MCH495J7JXETE",
-  jehovah_jireh: "PPRV7A9ZHAK4Q",
-  jesus: "B2PEJKRQH7VN4",
-  logos: "HXTNYNQ3JYJWE",
-  messiah: "X9EVAQ3EVMAXL",
+  // abba: "HKJM9F2WBAWK2",
+  // elohim: "EWDCW7FDRMB3J",
+  // el_shaddai: "5KGH9WM7QYBLL",
+  // elyon: "8UQDPYY43Y2VJ",
+  // immanuel: "MCH495J7JXETE",
+  // jehovah_jireh: "PPRV7A9ZHAK4Q",
+  // jesus: "B2PEJKRQH7VN4",
+  // logos: "HXTNYNQ3JYJWE",
+  // messiah: "X9EVAQ3EVMAXL",
+  abba: "ZRTCEVY7MKLPQ",
+  elohim: "RSVKANH4KMGPY",
+  el_roi: "7PMVNEBRCTHT6",
+  el_shaddai: "WAV64ZG8TV48G",
+  elyon: "SVGN5XAF86RN2",
+  immanuel: "9S3XN7S79N2S8",
+  jehovah_jireh: "4UTU9MXYQ5JU8",
+  jesus: "Y29PTWS2QR7FS",
+  logos: "KHAMC9DGVAGF2",
+  messiah: "4Q4HKMVKEDAGE",
+  custom: "JRJWZVBTT289U",
+};
+
+let buttonMeanings = {
+  abba: "Father",
+  elohim: "Creator",
+  el_roi: "God who sees",
+  el_shaddai: "God Almighty",
+  elyon: "God Most High",
+  immanuel: "God with us",
+  jehovah_jireh: "The Lord Who provides",
+  jesus: "God saves",
+  logos: "The Word",
+  messiah: "Chosen One",
+  custom:
+    "Use this option to purchase a custom necklace only after requesting and receiving confirmation of the design. To request a custom necklace, contact us at Pthree3Jewelry@gmail.com.",
 };
 
 const showPayScreen = function (str) {
@@ -85,6 +111,7 @@ const showPayScreen = function (str) {
     document.querySelector(".shopSection").classList.add("hidden");
     document.querySelector(".payScreen").classList.remove("hidden");
 
+    document.querySelector(".meaning").textContent = buttonMeanings[str];
     document.querySelector(".changeVal").value = buttonVals[str];
     document.querySelector(".payTitle").textContent = str.replace("_", " ");
     document.querySelector(".payTitle").textContent[0].toUpperCase();
@@ -128,6 +155,7 @@ const showPayScreen = function (str) {
 
 showPayScreen("abba");
 showPayScreen("elohim");
+showPayScreen("el_roi");
 showPayScreen("el_shaddai");
 showPayScreen("elyon");
 showPayScreen("immanuel");
@@ -135,6 +163,7 @@ showPayScreen("jehovah_jireh");
 showPayScreen("jesus");
 showPayScreen("logos");
 showPayScreen("messiah");
+showPayScreen("custom");
 
 document
   .querySelector(".material-symbols-outlined")

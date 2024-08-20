@@ -4,7 +4,7 @@
 }
 
 * {
-  font-size: 10px;
+  font-size: 62.5%;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -305,15 +305,20 @@ a {
   /* text-decoration: dashed; */
 }
 
-::selection {
+*::selection {
   color: #f3ded8;
-  background: #8f6542;
+  background-color: #804e89;
+}
+
+.activeBtn::selection {
+  color: #804e89;
+  background-color: #f3ded8;
 }
 
 .title::selection,
 .topNav *::selection {
   color: #8f6542;
-  background: #d6b984;
+  background-color: #d6b984;
 }
 
 img::selection {
@@ -380,7 +385,6 @@ img::selection {
 .meaning {
   margin-bottom: 1.2rem;
   font-size: 2.4rem;
-  /* max-width: 20%; */
 }
 
 .payDesc {
@@ -439,10 +443,6 @@ form * {
 
 .slide {
   display: none;
-}
-
-.slideManual img {
-  width: 100%;
 }
 
 .prev,

@@ -80,7 +80,7 @@ let buttonVals = {
   // messiah: "X9EVAQ3EVMAXL",
   abba: "ZRTCEVY7MKLPQ",
   elohim: "RSVKANH4KMGPY",
-  el_roi: "7PMVNEBRCTHT6",
+  el_roi: "AY6EAPA7LEV9Q",
   el_shaddai: "WAV64ZG8TV48G",
   elyon: "SVGN5XAF86RN2",
   immanuel: "9S3XN7S79N2S8",

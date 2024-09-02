@@ -1,36 +1,43 @@
 "use strict";
 
-// SLIDER
+document
+  .querySelector(".popupBox", ".popup")
+  .addEventListener("click", function () {
+    document.querySelector(".popup").classList.add("hidden");
+    document.querySelector(".popupBox").classList.add("hidden");
+    document.querySelector("body").classList.remove("yHidden");
 
-const sliderAuto = document.querySelector(".sliderAuto");
-const images = document.querySelectorAll(".sliderAuto img");
-let index = 0;
+    // SLIDER
 
-function cloneImages() {
-  const firstImage = images[0].cloneNode(true);
-  const lastImage = images[images.length - 1].cloneNode(true);
-  sliderAuto.appendChild(firstImage);
-  sliderAuto.insertBefore(lastImage, images[0]);
-}
+    const sliderAuto = document.querySelector(".sliderAuto");
+    const images = document.querySelectorAll(".sliderAuto img");
+    let index = 0;
 
-function moveSlider() {
-  index++;
-  sliderAuto.style.transform = `translateX(${-index * 100}%)`;
-  if (index >= images.length) {
-    setTimeout(() => {
-      sliderAuto.style.transition = "none";
-      index = 0;
+    function cloneImages() {
+      const firstImage = images[0].cloneNode(true);
+      const lastImage = images[images.length - 1].cloneNode(true);
+      sliderAuto.appendChild(firstImage);
+      sliderAuto.insertBefore(lastImage, images[0]);
+    }
+
+    function moveSlider() {
+      index++;
       sliderAuto.style.transform = `translateX(${-index * 100}%)`;
-      setTimeout(() => {
-        sliderAuto.style.transition = "transform 0.5s ease-in-out";
-      }, 0);
-    }, 500);
-  }
-}
+      if (index >= images.length) {
+        setTimeout(() => {
+          sliderAuto.style.transition = "none";
+          index = 0;
+          sliderAuto.style.transform = `translateX(${-index * 100}%)`;
+          setTimeout(() => {
+            sliderAuto.style.transition = "transform 0.5s ease-in-out";
+          }, 0);
+        }, 500);
+      }
+    }
 
-cloneImages();
-setInterval(moveSlider, 3000);
-
+    cloneImages();
+    setInterval(moveSlider, 3000);
+  });
 // PAGES
 
 let currentPage = "home";

@@ -101,12 +101,15 @@ let buttonVals = {
 
 let buttonMeanings = {
   abba: "Father",
+  alpha_and_omega: "The Beginning and the End",
   elohim: "Creator",
+  el_olam: "Everlasting God",
   el_roi: "God who sees",
   el_shaddai: "God Almighty",
   elyon: "God Most High",
   immanuel: "God with us",
   jehovah_jireh: "The Lord Who provides",
+  jehovah_mkaddesh: "The Lord who sanctifies",
   jesus: "God saves",
   logos: "The Word",
   messiah: "Chosen One",
@@ -158,16 +161,28 @@ const showPayScreen = function (str) {
             ].toUpperCase()
         );
     }
+    console.log(document.querySelector(".payTitle").textContent);
+    let uglyVariableXD = document.querySelector(".payTitle").textContent;
+    if (uglyVariableXD == "Jehovah Mkaddesh") {
+      document.querySelector(".payTitle").textContent = "Jehovah M'kaddesh";
+    }
+    if (uglyVariableXD == "AlphA and_omega") {
+      document.querySelector(".payTitle").textContent = "Alpha and Omega";
+    }
   });
 };
 
 showPayScreen("abba");
+showPayScreen("adonai");
+showPayScreen("alpha_and_omega");
 showPayScreen("elohim");
+showPayScreen("el_olam");
 showPayScreen("el_roi");
 showPayScreen("el_shaddai");
 showPayScreen("elyon");
 showPayScreen("immanuel");
 showPayScreen("jehovah_jireh");
+showPayScreen("jehovah_mkaddesh");
 showPayScreen("jesus");
 showPayScreen("logos");
 showPayScreen("messiah");
@@ -181,10 +196,22 @@ document
 
     let img = document.querySelectorAll(".slideManual img");
     img.forEach((img) => {
+      function replaceSecondSpace(string) {
+        let splitArr = string.split(" ");
+
+        if (splitArr.length > 2) {
+          splitArr[1] = splitArr[1] + "_" + splitArr[2];
+          splitArr.splice(2, 1);
+        }
+        return splitArr.join(" ");
+      }
+
       img.src = img.src
-        .replace("%20", " ")
+        .replaceAll("%20", " ")
         .replace(
-          document.querySelector(".payTitle").textContent.toLowerCase(),
+          replaceSecondSpace(
+            document.querySelector(".payTitle").textContent
+          ).toLowerCase(),
           "slider"
         );
     });
@@ -208,7 +235,7 @@ function currentSlide(n) {
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("slideManual");
-  console.log(slides);
+  // console.log(slides);
   let dots = document.getElementsByClassName("dot");
   if (n > slides.length) {
     slideIndex = 1;

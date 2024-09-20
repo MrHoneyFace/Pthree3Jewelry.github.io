@@ -77,22 +77,17 @@ checkForClick("contact");
 // .shopCard and .payScreen
 
 let buttonVals = {
-  // abba: "HKJM9F2WBAWK2",
-  // elohim: "EWDCW7FDRMB3J",
-  // el_shaddai: "5KGH9WM7QYBLL",
-  // elyon: "8UQDPYY43Y2VJ",
-  // immanuel: "MCH495J7JXETE",
-  // jehovah_jireh: "PPRV7A9ZHAK4Q",
-  // jesus: "B2PEJKRQH7VN4",
-  // logos: "HXTNYNQ3JYJWE",
-  // messiah: "X9EVAQ3EVMAXL",
   abba: "ZRTCEVY7MKLPQ",
+  adonai: "2RDG2QZD9M87E",
+  alpha_and_omega: "YPPTYUPEJSX3Y",
   elohim: "RSVKANH4KMGPY",
+  el_olam: "EA6W9HMUQA64A",
   el_roi: "AY6EAPA7LEV9Q",
   el_shaddai: "WAV64ZG8TV48G",
   elyon: "SVGN5XAF86RN2",
   immanuel: "9S3XN7S79N2S8",
   jehovah_jireh: "4UTU9MXYQ5JU8",
+  jehovah_mkaddesh: "U4TYF5RRRVGLU",
   jesus: "Y29PTWS2QR7FS",
   logos: "KHAMC9DGVAGF2",
   messiah: "4Q4HKMVKEDAGE",
@@ -101,6 +96,7 @@ let buttonVals = {
 
 let buttonMeanings = {
   abba: "Father",
+  adonai: "Lord",
   alpha_and_omega: "The Beginning and the End",
   elohim: "Creator",
   el_olam: "Everlasting God",

@@ -172,15 +172,24 @@ const showPayScreen = function (str) {
             ].toUpperCase()
         );
     }
-    console.log(document.querySelector(".payTitle").textContent);
+
     let uglyVariableXD = document.querySelector(".payTitle").textContent;
+
     if (uglyVariableXD == "Jehovah Mkaddesh") {
       document.querySelector(".payTitle").textContent = "Jehovah M'kaddesh";
-    }
-    if (uglyVariableXD == "AlphA and_omega") {
+      document.querySelector(".payDesc").textContent =
+        '5/8" gold-plated round on 16" chain. Special two-sided design; slight imprint from opposite side may be visible on each face.';
+    } else if (uglyVariableXD == "AlphA and_omega") {
       document.querySelector(".payTitle").textContent = "Alpha and Omega";
+      document.querySelector(".payDesc").textContent =
+        '5/8" gold-plated round on 16" chain. Special two-sided design; slight imprint from opposite side may be visible on each face.';
+    } else {
+      document.querySelector(".payDesc").textContent =
+        '5/8" gold-plated round on 16" chain';
     }
   });
+
+  //  Special two-sided design; slight imprint from opposite side may be visible on each face.
 };
 
 showPayScreen("abba");

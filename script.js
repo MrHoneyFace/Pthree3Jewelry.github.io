@@ -77,39 +77,6 @@ checkForClick("contact");
 // .shopCard and .payScreen
 
 let buttonVals = {
-  // SALE
-  // abba: "ZRTCEVY7MKLPQ",
-  // adonai: "2RDG2QZD9M87E",
-  // alpha_and_omega: "YPPTYUPEJSX3Y",
-  // elohim: "RSVKANH4KMGPY",
-  // el_olam: "EA6W9HMUQA64A",
-  // el_roi: "AY6EAPA7LEV9Q",
-  // el_shaddai: "WAV64ZG8TV48G",
-  // elyon: "SVGN5XAF86RN2",
-  // immanuel: "9S3XN7S79N2S8",
-  // jehovah_jireh: "4UTU9MXYQ5JU8",
-  // jehovah_mkaddesh: "U4TYF5RRRVGLU",
-  // jesus: "Y29PTWS2QR7FS",
-  // logos: "KHAMC9DGVAGF2",
-  // messiah: "4Q4HKMVKEDAGE",
-  // custom: "JRJWZVBTT289U",
-
-  // MORE EXPENSIVE SALE
-  // abba: "84H6M6TPQ84M8",
-  // adonai: "DWXZFUHL234JW",
-  // alpha_and_omega: "WW6XF9TLUGP7N",
-  // elohim: "LK6XTDU8LF3WJ",
-  // el_olam: "TNAP8GVKMJD32",
-  // el_roi: "X5HTBEWEL5C4Y",
-  // el_shaddai: "2MMXSSN8WAVB8",
-  // elyon: "S39SGTXHV22XQ",
-  // immanuel: "8YLLVP67HBHAU",
-  // jehovah_jireh: "7EJWH3N2XSJ88",
-  // jehovah_mkaddesh: "TZG92YX2GV8CE",
-  // jesus: "QYERLYD4KVK8L",
-  // logos: "NNWX8PR528S3L",
-  // messiah: "FW8MNLM6S7K62",
-  // custom: "ZK3GYZ8QVU57S",
   abba: "H2HRNW57C8TVE",
   adonai: "6FUYXL6D7Z4CW",
   alpha_and_omega: "7E3J44MNGQC8Q",
@@ -196,14 +163,14 @@ const showPayScreen = function (str) {
     if (uglyVariableXD == "Jehovah Mkaddesh") {
       document.querySelector(".payTitle").textContent = "Jehovah M'kaddesh";
       document.querySelector(".payDesc").textContent =
-        '5/8" gold-plated round on 16" chain. Special two-sided design; slight imprint from opposite side may be visible on each face.';
+        '5/8" gold-plated round on 16" or 18" chain. Special two-sided design; slight imprint from opposite side may be visible on each face.';
     } else if (uglyVariableXD == "AlphA and_omega") {
       document.querySelector(".payTitle").textContent = "Alpha and Omega";
       document.querySelector(".payDesc").textContent =
-        '5/8" gold-plated round on 16" chain. Special two-sided design; slight imprint from opposite side may be visible on each face.';
+        '5/8" gold-plated round on 16" or 18" chain. Special two-sided design; slight imprint from opposite side may be visible on each face.';
     } else {
       document.querySelector(".payDesc").textContent =
-        '5/8" gold-plated round on 16" chain';
+        '5/8" gold-plated round on 16" or 18" chain';
     }
   });
 

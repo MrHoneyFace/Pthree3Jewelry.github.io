@@ -1,11 +1,93 @@
 "use strict";
 
-// document
-//   .querySelector(".popupBox", ".popup")
-//   .addEventListener("click", function () {
-//     document.querySelector(".popup").classList.add("hidden");
-//     document.querySelector(".popupBox").classList.add("hidden");
-//     document.querySelector("body").classList.remove("yHidden");
+let buttonVals = {
+  abba: "H2HRNW57C8TVE",
+  adonai: "6FUYXL6D7Z4CW",
+  alpha_and_omega: "7E3J44MNGQC8Q",
+  elohim: "KBXKANS5JCRZG",
+  el_olam: "YDFBAGUSTUC3L",
+  el_roi: "NS9ZH5T5HJEW8",
+  el_shaddai: "QAYK89B6AH5AG",
+  elyon: "3GQRWMQ54NEJW",
+  immanuel: "ZCQUQXEXE96VN",
+  jehovah_jireh: "9EQ6YQP9AR5Z4",
+  jehovah_mkaddesh: "8QA9PSE374SY2",
+  jesus: "RN3N72ZAMA5JA",
+  logos: "G7N9N4DEY7FE2",
+  messiah: "8E3BXRP8JFPE2",
+  custom: "74EKPA53WB3GS",
+};
+
+//10080003380
+//lol ignore that
+
+let cheapVals = {
+  abba: "B9B2A5XPLN4CA",
+  adonai: "ZWCPS2FK5NV44",
+  alpha_and_omega: "9P3DW8P3F5LUY",
+  elohim: "UYA84KKN2672E",
+  el_olam: "MJQ2E2EC65H5W",
+  el_roi: "A2XYM48BVX4LN",
+  el_shaddai: "W86BD79XVKQKU",
+  elyon: "TFZQGLNZ7FYQ4",
+  immanuel: "A2ASZRKKE7L8J",
+  jehovah_jireh: "7QW5QH4Q6B27A",
+  jehovah_mkaddesh: "KE2HG4DCFAXVA",
+  jesus: "97X87TGXCSD9C",
+  logos: "WZ5WHAPHAYXBU",
+  messiah: "5T3WEFTRE87PJ",
+  custom: "5FXT7SWTB2SBA",
+};
+
+let buttonMeanings = {
+  abba: "Father",
+  adonai: "Lord",
+  alpha_and_omega: "The Beginning and the End",
+  elohim: "Creator",
+  el_olam: "Everlasting God",
+  el_roi: "God who sees",
+  el_shaddai: "God Almighty",
+  elyon: "God Most High",
+  immanuel: "God with us",
+  jehovah_jireh: "The Lord Who provides",
+  jehovah_mkaddesh: "The Lord who sanctifies",
+  jesus: "God saves",
+  logos: "The Word",
+  messiah: "Chosen One",
+  custom:
+    "Use this option to purchase a custom necklace only after requesting and receiving confirmation of the design. To request a custom necklace, contact us at Pthree3Jewelry@gmail.com.",
+};
+
+// discount
+
+let isDiscountActive;
+let curBtnVal = {};
+
+let discountStartDate = new Date(1732942800000);
+let discountEndDate = new Date(1733029199999);
+new Date() > discountStartDate && new Date() < discountEndDate
+  ? (isDiscountActive = true)
+  : (isDiscountActive = false);
+
+if (isDiscountActive == true) {
+  document.querySelector("body").classList.add("yHidden");
+  document.querySelector(".popupBox").classList.remove("hidden");
+  curBtnVal = cheapVals;
+} else {
+  document.querySelector(".popupBox").classList.add("hidden");
+  document.querySelector("body").classList.remove("yHidden");
+  curBtnVal = buttonVals;
+}
+
+// popup
+
+document
+  .querySelector(".popupBox", ".popup")
+  .addEventListener("click", function () {
+    document.querySelector(".popup").classList.add("hidden");
+    document.querySelector(".popupBox").classList.add("hidden");
+    document.querySelector("body").classList.remove("yHidden");
+  });
 
 // SLIDER
 
@@ -76,50 +158,13 @@ checkForClick("contact");
 
 // .shopCard and .payScreen
 
-let buttonVals = {
-  abba: "H2HRNW57C8TVE",
-  adonai: "6FUYXL6D7Z4CW",
-  alpha_and_omega: "7E3J44MNGQC8Q",
-  elohim: "KBXKANS5JCRZG",
-  el_olam: "YDFBAGUSTUC3L",
-  el_roi: "NS9ZH5T5HJEW8",
-  el_shaddai: "QAYK89B6AH5AG",
-  elyon: "3GQRWMQ54NEJW",
-  immanuel: "ZCQUQXEXE96VN",
-  jehovah_jireh: "9EQ6YQP9AR5Z4",
-  jehovah_mkaddesh: "8QA9PSE374SY2",
-  jesus: "RN3N72ZAMA5JA",
-  logos: "G7N9N4DEY7FE2",
-  messiah: "8E3BXRP8JFPE2",
-  custom: "74EKPA53WB3GS",
-};
-
-let buttonMeanings = {
-  abba: "Father",
-  adonai: "Lord",
-  alpha_and_omega: "The Beginning and the End",
-  elohim: "Creator",
-  el_olam: "Everlasting God",
-  el_roi: "God who sees",
-  el_shaddai: "God Almighty",
-  elyon: "God Most High",
-  immanuel: "God with us",
-  jehovah_jireh: "The Lord Who provides",
-  jehovah_mkaddesh: "The Lord who sanctifies",
-  jesus: "God saves",
-  logos: "The Word",
-  messiah: "Chosen One",
-  custom:
-    "Use this option to purchase a custom necklace only after requesting and receiving confirmation of the design. To request a custom necklace, contact us at Pthree3Jewelry@gmail.com.",
-};
-
 const showPayScreen = function (str) {
   document.querySelector(`#${str}`).addEventListener("click", function () {
     document.querySelector(".shopSection").classList.add("hidden");
     document.querySelector(".payScreen").classList.remove("hidden");
 
     document.querySelector(".meaning").textContent = buttonMeanings[str];
-    document.querySelector(".changeVal").value = buttonVals[str];
+    document.querySelector(".changeVal").value = curBtnVal[str];
     document.querySelector(".payTitle").textContent = str.replace("_", " ");
     document.querySelector(".payTitle").textContent[0].toUpperCase();
 
@@ -192,6 +237,8 @@ showPayScreen("jesus");
 showPayScreen("logos");
 showPayScreen("messiah");
 showPayScreen("custom");
+
+// exit payscreen
 
 document
   .querySelector(".material-symbols-outlined")

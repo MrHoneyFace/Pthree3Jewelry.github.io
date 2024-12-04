@@ -1,5 +1,7 @@
 "use strict";
 
+let slideIndex;
+
 let buttonVals = {
   abba: "H2HRNW57C8TVE",
   adonai: "6FUYXL6D7Z4CW",
@@ -175,7 +177,6 @@ const showPayScreen = function (str) {
         "slider",
         document.querySelector(".payTitle").textContent.toLowerCase()
       );
-
       // console.log(img.src);
     });
 
@@ -208,18 +209,16 @@ const showPayScreen = function (str) {
     if (uglyVariableXD == "Jehovah Mkaddesh") {
       document.querySelector(".payTitle").textContent = "Jehovah M'kaddesh";
       document.querySelector(".payDesc").textContent =
-        '5/8" gold-plated round on 16" or 18" chain. Special two-sided design; slight imprint from opposite side may be visible on each face.';
+        '5/8" gold-plated round on 16" chain. Special two-sided design; slight imprint from opposite side may be visible on each face.';
     } else if (uglyVariableXD == "AlphA and_omega") {
       document.querySelector(".payTitle").textContent = "Alpha and Omega";
       document.querySelector(".payDesc").textContent =
-        '5/8" gold-plated round on 16" or 18" chain. Special two-sided design; slight imprint from opposite side may be visible on each face.';
+        '5/8" gold-plated round on 16" chain. Special two-sided design; slight imprint from opposite side may be visible on each face.';
     } else {
       document.querySelector(".payDesc").textContent =
-        '5/8" gold-plated round on 16" or 18" chain';
+        '5/8" gold-plated round on 16" chain';
     }
   });
-
-  //  Special two-sided design; slight imprint from opposite side may be visible on each face.
 };
 
 showPayScreen("abba");
@@ -271,7 +270,7 @@ document
 
 // MANUAL SLIDER
 
-let slideIndex = 1;
+slideIndex = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
